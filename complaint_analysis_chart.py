@@ -57,7 +57,7 @@ def create_complaint_analysis():
                  fontsize=20, fontweight='bold', y=0.96)
     
     # 출처 정보 추가
-    fig.text(0.5, 0.02, '데이터 출처: 현장조사 (2024년 12월 기준) | 조사기간: 2024.12 | 조사대상: 19명 | 조사방법: 직접 인터뷰', 
+    fig.text(0.5, 0.02, '데이터 출처: 현장조사 (2024년 12월 19일) | 조사기간: 2024.12.19 | 조사대상: 19명 | 조사방법: 직접 인터뷰', 
             ha='center', va='bottom', fontsize=10, style='italic', color='gray')
     
     # 차트 1: 불만사항별 고객 수 (수평 막대 차트) - 집밥/건강 니즈 강조
@@ -77,7 +77,7 @@ def create_complaint_analysis():
             colors1[i] = ['#ff6b6b', '#ff8e8e', '#ffa8a8', '#ffc2c2', '#ffdcdc', '#ffe6e6', '#fff0f0'][i-1]
     
     bars1 = ax1.barh(complaint_items, complaint_counts, color=colors1)
-    ax1.set_title('🔥 핵심 불만사항: 집밥 느낌/건강 식단 부족!\n(몇 명 중에 몇 명이 언급했는지)\n출처: 현장조사', fontsize=14, fontweight='bold', pad=20)
+    ax1.set_title('🔥 핵심 불만사항: 집밥 느낌/건강 식단 부족!\n(몇 명 중에 몇 명이 언급했는지)\n출처: 현장조사 (2024.12.19)', fontsize=14, fontweight='bold', pad=20)
     ax1.set_xlabel('고객 수 (명)', fontsize=12)
     ax1.grid(True, alpha=0.3)
     
@@ -99,7 +99,7 @@ def create_complaint_analysis():
     colors2 = ['#2ecc71', '#58d68d', '#82e0aa', '#a9dfbf', '#d5f4e6']
     
     bars2 = ax2.barh(satisfaction_items, satisfaction_counts, color=colors2[:len(satisfaction_items)])
-    ax2.set_title('만족 요인별 고객 수\n(비교용)\n출처: 현장조사', fontsize=14, fontweight='bold', pad=20)
+    ax2.set_title('만족 요인별 고객 수\n(비교용)\n출처: 현장조사 (2024.12.19)', fontsize=14, fontweight='bold', pad=20)
     ax2.set_xlabel('고객 수 (명)', fontsize=12)
     ax2.grid(True, alpha=0.3)
     
@@ -121,7 +121,7 @@ def create_complaint_analysis():
     colors3 = ['#ff6b6b' if '한식' in item else '#3498db' for item in health_items]
     
     bars3 = ax3.barh(health_items, health_counts, color=colors3)
-    ax3.set_title('집밥 건강 니즈별 고객 수\n(핵심 니즈)\n출처: 현장조사', fontsize=14, fontweight='bold', pad=20)
+    ax3.set_title('집밥 건강 니즈별 고객 수\n(핵심 니즈)\n출처: 현장조사 (2024.12.19)', fontsize=14, fontweight='bold', pad=20)
     ax3.set_xlabel('고객 수 (명)', fontsize=12)
     ax3.grid(True, alpha=0.3)
     
